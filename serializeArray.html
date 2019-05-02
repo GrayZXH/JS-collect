@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+	<form>
+		<label for="name">用户名</label>
+		<input type="text" id="name" name="username" value="Gray">
+		<label for="email">邮箱</label>
+		<input type="email" id="email" name="email" value="10000@qq.com">
+		<button type="button" id="submit">提交</button>
+	</form>
+<script>
+	$(document).ready(function(){
+		$('#submit').click(function(){
+		var	x=$("form").serializeArray();
+		//通过serializeArray()这个方法可以把form中所有表单值，收集起来，返回一个JSON对象。这个对象是由一个对象数组组成的，其中每个对象包含一个或两个名值对--name参数和value参数。
+		var data = {};
+		//上面范湖IDE对象数组不能直接使用，先声明一个JavaScript对象(data)来存放最后生成的数据。
+		$(x).each(function(){//用jQuery的each()方法遍历JSON对象数组。
+			data[this.name]=this.value;//遍历出的值存入data对象中。
+		});
+
+			console.log(data);
+		})
+	})
+	//扩展：JavaScript的对象和JSON对象非常相似，JSON本来就是JavaScript对象表示法(JavaScript Object Notation).注意serializeArrray()返回的是JSON对象是由对象数组组成的。
+</script>
+</body>
+</html>
