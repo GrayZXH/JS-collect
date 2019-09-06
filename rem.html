@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rem长度单位,网页字体随页面大小变化demo</title>
+	<meta name="description" content="利用js与rem长度方式，随网页宽度的变化，改变页面相对单位长度">
+	<script>
+	    window.onresize = function(){
+	      	var winW=document.documentElement.clientWidth;
+	      	winW>=1200 ? winW = 1200:winW;
+	      	var font=document.documentElement.style.fontSize=(winW/1200)*100+"px";
+	    }
+	    window.onresize()
+	</script>
+</head>
+<body>
+	<div style="text-align: center;width: 1rem;height: 1rem;background-color: pink;margin: 0 auto;">
+		div
+	</div>
+	<p style="font-size: 1rem">div>p,利用js与rem长度方式，随网页宽度的变化，改变页面相对单位长度</p>
+	<h1>h1</h1>
+	<h2>h2</h2>
+	<h3>h3</h3>
+	<h4>h4</h4>
+	<h5>h5</h5>
+</body>
+</html>
